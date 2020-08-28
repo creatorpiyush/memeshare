@@ -15,7 +15,7 @@ function loadProducts() {
   });
 }
 
-// todo: llke button functioning
+// todo: like button functioning
 // <button class="btn-floating halfway-fab waves-effect waves-light" id='likebtn' ondblclick="clinked()"> <i class="material-icons"
 //         id="liked" style="font-size: 35px;" >favorite_border</i></button>
 

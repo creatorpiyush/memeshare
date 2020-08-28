@@ -28,8 +28,8 @@ route.post("/add", upload.single("memeimg"), (req, res) => {
   console.log("req.file", req.file);
 
   cloudinary.uploader.upload(req.file.path, (err, result) => {
-    console.log("error: ", err);
-    console.log("result:", result);
+    // console.log("error: ", err);
+    // console.log("result:", result);
 
     if (req.body.memetitle === "" || req.body.memetitle == null) {
       return res
