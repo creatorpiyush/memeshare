@@ -7,6 +7,11 @@
 
     <title>{{docname}}</title>
 
+    {{!-- materialize js --}}
+    <script async defer src="/js/jquery-3.5.1.min.js"></script>
+    {{!-- <script async defer src="/js/popper.js"></script> --}}
+    <script async defer src="/js/materialize.js"></script>
+
     {{!-- materialize css --}}
     <link rel="stylesheet" href="/css/materialize.css">
 
@@ -14,28 +19,59 @@
     <link rel="stylesheet" href="/fonts/firacode.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    {{!-- materialize js --}}
-    <script async defer src="/js/jquery-3.5.1.js"></script>
-    <script async defer src="/js/popper.js"></script>
-    <script async defer src="/js/materialize.js"></script>
-
     {{!-- common css --}}
     <link rel="stylesheet" href="/app/common.css">
 
     {{!-- common js --}}
-    <script async defer src="/app/common.js"></script>
+    <script defer src="/app/common.js"></script>
 
 </head>
 
 <body>
 
     <div id="navbar"></div>
-    <div id="cards"></div>
-    <div class="fixed-action-btn">
-        <a href="/memeadd" class="btn-floating btn-large red">
-            <i class="large material-icons" style="font-size: 45px;">add_to_photos</i>
-        </a>
+
+    {{#if err}}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <span id="errtext">{{err}}</span>
     </div>
+    <style>
+        .alert {
+            padding: 30px;
+            padding-top: ;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 20px;
+            color: white;
+            font-weight: 1000;
+            float: right;
+            font-size: 27px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+
+        #errtext {
+            font-size: 21px;
+            font-weight: 800;
+        }
+    </style>
+
+    <script>
+
+    </script>
+    {{/if}}
+
+    <div id="cards"></div>
+    <div id="addmeme"></div>
     <div id="footer"></div>
 
 </body>
