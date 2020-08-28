@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const db_url = `mongodb://localhost:27017/memepage_db`;
+const db_url = `mongodb+srv://meme_share:memeshare@cluster0.6ivvq.mongodb.net/MEMESHAREWEB?retryWrites=true&w=majority`;
 
 mongoose.connect(
   db_url,
