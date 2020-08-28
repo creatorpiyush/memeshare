@@ -19,26 +19,20 @@ const upload = multer({ dest: "src/uploads/" });
 
 route.use("/images", express.static("../images"));
 
-// * first page
-route.get("/", (req, res) => {
-  res.render("addmeme");
-});
 route.post("/add", upload.single("memeimg"), (req, res) => {
   // console.log("req.body", req.body);
-  console.log("req.file", req.file);
+  // console.log("req.file", req.file);
+
+  if (req.body.memetitle === "" || req.body.memetitle == null) {
+    return res.status(422).render("index", { err: "Please Add a Meme Title" });
+  }
+  if (req.file == undefined) {
+    return res.status(422).render("index", { err: "Please Add a Meme" });
+  }
 
   cloudinary.uploader.upload(req.file.path, (err, result) => {
     // console.log("error: ", err);
     // console.log("result:", result);
-
-    if (req.body.memetitle === "" || req.body.memetitle == null) {
-      return res
-        .status(422)
-        .render("addmeme", { err: "Please Add a Meme Title" });
-    }
-    if (req.file == undefined) {
-      return res.status(422).render(".", { err: "Please Add a Meme" });
-    }
 
     const temp = new addmeme({
       memeimg: result.url,
