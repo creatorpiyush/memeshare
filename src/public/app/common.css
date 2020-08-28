@@ -1,0 +1,11 @@
+* {
+    font-family: "Fira Code", monospace;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+div {
+    margin: 1.2%;
+}
