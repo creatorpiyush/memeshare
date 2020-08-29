@@ -32,10 +32,10 @@ route.post("/add", upload.single("memeimg"), (req, res) => {
 
   cloudinary.uploader.upload(req.file.path, (err, result) => {
     // console.log("error: ", err);
-    // console.log("result:", result);
+    console.log("result:", result);
 
     const temp = new addmeme({
-      memeimg: result.url,
+      memeimg: result.secure_url,
       memeid: Date().split(" ").join("_").split(":").join("_"),
       memetitle: req.body.memetitle,
     });
