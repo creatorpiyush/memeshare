@@ -1,6 +1,6 @@
 <nav class="navbar-fixed" style="position: sticky;">
     <div class="nav-wrapper" style="background-color: rgb(54, 51, 51);">
-        <a href="/" class="brand-logo" style="font-weight: 800;">Republic Of Memers</a>
+        <a href="/" class="brand-logo" id="logoname">Republic Of Memers</a>
         <!-- <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
         <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
@@ -21,3 +21,23 @@
         $('.sidenav').sidenav();
     });
 </script> -->
+
+<style>
+    #logoname {
+        font-weight: 800;
+    }
+
+    @media(max-width: 680px) {
+        #logoname {
+            font-size: 15.5px;
+            font-weight: 800;
+        }
+    }
+
+    @media(max-width: 350px) {
+        #logoname {
+            font-size: 12.5px;
+            font-weight: 800;
+        }
+    }
+</style>
