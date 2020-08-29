@@ -1,6 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const multer = require("multer");
+const flash = require("req-flash");
 const fs = require("fs").promises;
 
 const cloudinary = require("cloudinary").v2;
@@ -19,15 +20,24 @@ const upload = multer({ dest: "src/uploads/" });
 
 route.use("/images", express.static("../images"));
 
+route.use(flash());
+
 route.post("/add", upload.single("memeimg"), (req, res) => {
   // console.log("req.body", req.body);
   // console.log("req.file", req.file);
 
   if (req.body.memetitle === "" || req.body.memetitle == null) {
-    return res.status(422).render("index", { err: "Please Add a Meme Title" });
+    req.flash({ err: "Please Add Meme Title" });
+    res.redirect("/");
+    // return res.status(422).render("index", { err: "Please Add a Meme Title" });
   }
+  app.use(cookieParser());
+  app.use(cookieParser());
+
   if (req.file == undefined) {
-    return res.status(422).render("index", { err: "Please Add a Meme" });
+    req.flash({ err: "Please Add a Meme" });
+    res.redirect("/");
+    // return res.status(422).render("index", { err: "Please Add a Meme" });
   }
 
   cloudinary.uploader.upload(req.file.path, (err, result) => {
