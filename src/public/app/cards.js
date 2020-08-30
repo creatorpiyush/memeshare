@@ -6,8 +6,8 @@ function loadProducts() {
                 <img src="${m.memeimg}">
                     <a href="${m.memeimg}" class="btn-floating halfway-fab waves-effect waves-light blue" style="font-size: 35px;" download="${m.memetitle}"> 
                     <i class="material-icons">aspect_ratio</i></a>
-            </div>
-            <span class="card-title" style="color: black; font-weight: 1000;">${m.memetitle}</span>
+            </div><br>
+            <span class="card-title" style="color: black; font-weight: 1000;">${m.memetitle}</span><br><br><br>
             <div id="endevery"></div>
 `)
       );
