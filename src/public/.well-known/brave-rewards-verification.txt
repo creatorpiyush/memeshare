@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: meme-share-web.herokuapp.com
-Token: 07b0f99eaa6d71e53e627932d0abf86ea77c1128be9353881528b8fbbb7be87a
