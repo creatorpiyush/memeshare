@@ -19,7 +19,7 @@ const memeshow = require("./src/routes/show");
 app.set("view engine", "hbs");
 app.set("views", "./src/public/components");
 app.use("/", express.static(__dirname + "/src/public"));
-app.use(express.urlencoded({ urlencoded: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // * express-session
